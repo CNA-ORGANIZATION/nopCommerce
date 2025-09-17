@@ -1,47 +1,79 @@
 Here are some very useful Jira prompts that developers can use for their day-to-day work, categorized for clarity:
 
 **1. For Epics (High-Level Initiatives):**
-
+```
 Show me the JIRA Epic Story containing the current git repo url in its description.
+```
 
 Notes: Assuming CLINE is working on a git repository OR User can also specify the exact <git repo url> as well in the prompt.
 Use Case: This prompt will help user to find specifc EPIC and respective USER Stories details for the given git repository. 
 
-
+```
 Under EPIC `[EPIC-KEY]`, Show me all the JIRA User Story containing "Integration: Web Service" in its summary.
 Notes: Prompt for pattern specifc search.
 Use Case: This prompt will help user to find specifc Integration USER Stories along with the sub-tasks details for the given summary pattern. Example: "Integration: Web Service" etc.
-
+```
 
 
 
 
 
 Few Other Generic Prompts:  
-   
+```
 Show me all Epics in `[PROJECT-KEY]` that are currently 'In Progress'.
+```
+```
 List all User Stories linked to Epic `[EPIC-KEY]`.
+```
+```
 Create a new Epic in `[PROJECT-KEY]` with summary 'Improve Application Performance'.
+```
+```
 What is the overall status of Epic `[EPIC-KEY]`?"
+```
+```
 Show me all Epics I'm assigned to as a reporter or assignee.
+```
 
 **2. For User Stories (Features/Requirements):**
-
+```
 Show me all User Stories assigned to me in the current sprint.
+```
+```
 List all Sub-tasks for User Story `[USER-STORY-KEY]`.
+```
+```
 Create a new User Story in `[PROJECT-KEY]` with summary 'As a user, I want to reset my password' and link it to Epic `[EPIC-KEY]`.
+```
+```
 What is the status of User Story `[USER-STORY-KEY]`?"
+```
+```
 Show me all User Stories in `[PROJECT-KEY]` that are 'Ready for Review'.
+```
+```
 Move User Story `[USER-STORY-KEY]` to 'Done' and ensure all sub-tasks are closed.
+```
 
 **3. For Sub-tasks (Detailed Work Items):**
-
+```
 Show me all Sub-tasks assigned to me for User Story `[USER-STORY-KEY]`.
+```
+```
 List all my open Sub-tasks across all User Stories.
+```
+```
 Create a new Sub-task for `[USER-STORY-KEY]` with summary 'Implement password reset API endpoint' and assign it to me.
+```
+```
 What is the status of Sub-task `[SUB-TASK-KEY]`?"
+```
+```
 Transition Sub-task `[SUB-TASK-KEY]` to 'In Progress'.
+```
+```
 Add a comment to Sub-task `[SUB-TASK-KEY]` stating 'Started working on the database schema changes'.
+```
 
 **General Prompts for Hierarchical Navigation:**
 
