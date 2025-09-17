@@ -8,7 +8,6 @@ Put .vscode, .clinerules, clineworkspace and agent_reports folder and related su
 ```
 
 ### 2.
-```Clone this git repo url "<GIT REPO URL>" from "<BRANCH NAME>" branch to this folder "<Folder Path/Name>". and open the same into VS Code.
-Assumptionn: Given "<BRANCH NAME>" must already exists. 
-Example: Clone this git repo url "https://gitlab.com/macys/ORDMGT/updpo_hdr.git" from "feature/MFDA" branch to this folder "updpo_hdr". and open the same into VS Code.
+```
+Clone this git repo url "<GIT REPO URL>" from "<BRANCH NAME>" branch to this folder "<Folder Path/Name>". and open the same into VS Code.
 ```
