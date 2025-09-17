@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture of nopCommerce | nopCommerce documentation</title>
+<!-- Omitted for brevity -->
+<h2>Projects in nopCommerce Solution</h2>
+<h3>Application Core</h3>
+<p>This is the innermost layer in the nopCommerce architecture. It is the core of the application. All the data access logic and business logic classes reside inside this layer. In the nopCommerce solution, we can find all of the projects for this layer inside the "Libraries" directory. This layer contains three projects.</p>
+<h4>Nop.Core</h4>
+<p>This project contains core classes that are shared with the entire solution like Domain Entities, Caching, Events, and other Helper classes.</p>
+<h4>Nop.Data</h4>
+<p>The <code>Nop.Data</code> project depends on the <code>Nop.Core</code> project, which is in the middle of the architecture. It does not depend on any other project in the solution. The <code>Nop.Data</code> project has classes and functions for reading and writing to a database or other data store. It separates data-access logic from business objects.</p>
+<h4>Nop.Services</h4>
+<p>The <code>Nop.Services</code> can have <code>Nop.Data</code> and <code>Nop.Core</code> as their dependency but neither <code>Nop.Core</code> nor <code>Nop.Data</code> can have <code>Nop.Service</code> as their dependency. This means projects can only have another project as a dependency only if it resides inward or more center from the layer the current project resides. Which is the key to code decoupling. The main advantage of this approach/architecture is that, now if we want to test the Application Core then we can do so even if we do not have any UI for our application. Because the Application Core is independent of the other layers outside the Application Core.</p>
+<h3>UI Layer</h3>
+<p>This layer resides outside the "Application Core". In the nopCommerce solution, we can find all of the projects for this layer inside the "Presentation" directory. All the presentation logic and UI resides in this layer. This is the layer where the UI(User Interface) is created for the end-user. This layer has two projects.</p>
+<h4>Nop.Web.Framework</h4>
+<p>The <code>Nop.Web.Framework</code> project is the inner layer of the Presentation layer and depends on the Application Core layer. It is a class library project that serves as a framework for the Presentation layer. It has shared logic for both the nopCommerce public website and the admin panel.</p>
+<h4>Nop.Web</h4>
+<p>The <code>Nop.Web</code> project is the outermost layer of the Presentation layer in nopCommerce architecture. It has the E-Commerce front-end website user interface that users can interact with. It is an ASP.NET Core application that depends on <code>Nop.Web.Framework</code> and the Application Core. It uses <code>Nop.Web.Framework</code> for the shared logic between this and the Admin panel. It uses the Application Core for data access and business logic.</p>
+<h4>Nop.Admin</h4>
+<p>This project lives inside the <code>Nop.Web</code> project as an area. It is also a UI(User Interface), but this part of the Presentation contains UI for the Admin panel. Admin panel is where all the contents for a public website are maintained and from where we can monitor the activities of our public website. A public website can be accessed without any restriction but the "Admin panel" requires some Authentication and Authorization to access it since it contains information that only the site admin has the right to access.</p>
+<h3>Test Layer</h3>
+<p>This layer resides in the same layer as the "Presentation Layer", right outside the "Application Core" This layer is all about Testing.</p>
+<h4>Nop.Tests</h4>
+<p>This layer is the inner layer of the "Test layer" and has a dependency on the "Application Core" layer. This project contains the core logic for testing.</p>
+<h4>Nop.Core.Tests</h4>
+<p>These tests are built for Unit Testing the <code>Nop.Core</code> project, it tests for caching, domain entities, and so on.</p>
+<h4>Nop.Data.Tests</h4>
+<p>These tests are built for Unit Testing the <code>Nop.Service</code> project. It contains logic to test every service class for every operation.</p>
+<h4>Nop.Web.Tests</h4>
+<p>These tests can be used to test the Presentation layer of the nopCommerce, which contains "Public website" and "Admin Panel".</p>
+<hr />
