@@ -1,7 +1,7 @@
 ## Prompts Details:
 
 ### Application Info:
-  ```Analyze the analysis reports @/agent_reports/ and generate the detailed application information.```
+  Analyze the analysis reports @/agent_reports/ and generate the detailed application information.
  
 ### High level Feature list and short summary of each feature:
   ```Analyze the analysis reports @/agent_reports/ and generate High level Feature list and short summary of each feature.```
