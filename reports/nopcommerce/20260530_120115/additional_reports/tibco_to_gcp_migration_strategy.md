@@ -1,0 +1,1 @@
+Not Applicable - No TIBCO components detected, no migration strategy required.
